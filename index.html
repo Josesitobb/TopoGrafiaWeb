@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversión de Coordenadas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Conversión de Coordenadas Sexagesimales a Decimales</h1>
+
+        <label for="cordenadas">Ingrese su coordenada:</label>
+        <input type="text" id="cordenadas" placeholder="Ejemplo: 562359" >
+        <button onclick="convertidor()">Convertir</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Grados</th>
+                    <th>Minutos</th>
+                    <th>Segundos</th>
+                    <th>Total en Grados</th>
+                </tr>
+            </thead>
+            <tbody id="Mostrar_elementos">
+                <!-- Aquí se insertarán las coordenadas dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+<script src="app.js"></script>
+</body>
+</html>
