@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encuesta Hidrologia</title>
+    <link rel="stylesheet" href="./Styles/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="containerMain">
+      <h1 id="titleSurvey">Tipos de panes</h1>
+
+      <div class="Linea"></div>
+
+      <form action="">
+        <!-- Pregunta1 -->
+        <label for="question1" class="form-label label"
+          >Pregunta 1 ¿Le gusta el pan ?</label
+        >
+        <input
+          type="text"
+          class="input"
+          name="question1 "
+          id="question1"
+          placeholder="EJ : Si o No"
+        />
+
+        <!-- Pregunta 2 -->
+        <label for="question2" class="form-label label"
+          >Pregunta 2 ¿Cuales son sus favoritos?</label
+        >
+        <input
+          type="text"
+          class="input"
+          name="question2"
+          id="question2"
+          placeholder="Ej: blandito, rollito, negrito "
+        />
+
+        <!-- Pregunta 3 -->
+        <label for="question3" class="form-label label"
+          >Pregunta 3 ¿Que panaderia frecuentemente?</label
+        >
+        <input
+          type="text"
+          class="input"
+          name="question3"
+          id="question3"
+          placeholder="Ej: Soles"
+        />
+        <!-- Modal -->
+        <h3 class="titleMap">MAPA</h3>
+
+        <!-- Boton del modal -->
+        <h6 class="modalDescriptionMap">
+          Haga click en el modal para poder ver el mapa
+        </h6>
+
+        <button
+          type="button"
+          class="button-map"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          MAPA
+        </button>
+
+        <!-- Pregunta 3 -->
+
+        <h3 class="titleIcons">ICONOS DE RECICLAJE</h3>
+        <div class="containerIcon">
+          <!-- GLASS -->
+          <label>
+            <input type="checkbox" id="Glass" hidden />
+            <img src="./Icons/Glass.png" alt="Glass" class="imgIcon" />
+          </label>
+
+          <!-- METAL -->
+          <label>
+            <input type="checkbox" id="Metal" hidden />
+            <img src="./Icons/Metal.png" alt="Glass" class="imgIcon" />
+          </label>
+
+          <!-- PAPER -->
+          <label>
+            <input type="checkbox" id="Paper" hidden />
+            <img src="./Icons/Paper.png" alt="Glass" class="imgIcon" />
+          </label>
+
+          <!-- PLASTIC -->
+          <label>
+            <input type="checkbox" id="Plastic" hidden />
+            <img src="./Icons/Plastic.png" alt="Glass" class="imgIcon" />
+          </label>
+        </div>
+
+        <!-- Boton de guardado -->
+        <button type="button" class="buttonEnd" onclick="getDataForm()">Enviar</button>
+      </form>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Mapa</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Mapas -->
+            <div id="map" class="mb-3"></div>
+            <!-- Coordenadas -->
+            <input type="text" id="Coordinated" hidden></input>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" id="buttonConfirm" data-bs-dismiss="modal" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4JDsPc5AMXWvolT5m3Sc8yxiUSmUFWEc&callback=initMap"
+      async
+      defer
+    ></script>
+
+    <script src="./Script/Map.js"></script>
+    <script src="./Script/Api.js"></script>
+  </body>
+</html>
